@@ -1,0 +1,19 @@
+version: "3"
+services:
+    web:
+        build: .
+        ports:
+            - "3000:3000"
+        env_file: ./.env
+        restart: on-failure
+        depends_on:
+            db:
+              condition: service_healthy
+    db:
+        image: "mcr.microsoft.com/mssql/server:2019-CU16-GDR1-ubuntu-20.04"
+        env_file: ./.env
+        environment:
+          - SA_PASSWORD=$DB_PASSWORD
+          - ACCEPT_EULA=Y
+        healthcheck:
+          test: "exit 0"

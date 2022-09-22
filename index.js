@@ -8,10 +8,10 @@ import cors from "cors";
 
 const app = express();
 
-const port = config.Port || 5000;
+const port = config.Port || 3000;
 
-// User.sync({ force: true });
-// Customer.sync({ force: true });
+User.sync({ force: true });
+Customer.sync({ force: true });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
