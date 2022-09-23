@@ -3,19 +3,17 @@ services:
     web:
         build: .
         ports:
-            - "3000:3000"
+          - "3000:3000"
         env_file: ./.env
         restart: on-failure
-        environment:
-          - DB_HOST=db
         depends_on:
             db:
-              condition: service_started
+              condition: service_healthy
     db:
         image: "mcr.microsoft.com/mssql/server:2019-CU16-GDR1-ubuntu-20.04"
         env_file: ./.env
-        ports:
-            - "1433:1433"
+        ports: 
+          - "1433:1433"
         expose:
           - "1433"
         environment:
