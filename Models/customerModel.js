@@ -18,12 +18,12 @@ export default db.define("customer", {
     unique: true,
   },
   cpf: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.BIGINT,
     allowNull: false,
     unique: true,
   },
   phone: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.BIGINT,
     allowNull: false,
   },
   address: {
@@ -31,7 +31,7 @@ export default db.define("customer", {
     allowNull: false,
   },
   cep: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.BIGINT,
     allowNull: false,
   },
 });

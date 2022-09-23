@@ -6,12 +6,18 @@ services:
             - "3000:3000"
         env_file: ./.env
         restart: on-failure
+        environment:
+          - DB_HOST=db
         depends_on:
             db:
-              condition: service_healthy
+              condition: service_started
     db:
         image: "mcr.microsoft.com/mssql/server:2019-CU16-GDR1-ubuntu-20.04"
         env_file: ./.env
+        ports:
+            - "1433:1433"
+        expose:
+          - "1433"
         environment:
           - SA_PASSWORD=$DB_PASSWORD
           - ACCEPT_EULA=Y

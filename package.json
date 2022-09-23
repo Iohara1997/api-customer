@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js -L"
+    "start": "nodemon index.js -L"
   },
   "author": "iohara",
   "license": "ISC",
@@ -19,7 +19,9 @@
     "tedious": "^15.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "babel-register": "^6.26.0",
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.4.1"
   },
   "type": "module"
 }

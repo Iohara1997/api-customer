@@ -1,6 +1,6 @@
 FROM node:16-alpine
 WORKDIR /app
 COPY . .
-RUN npm install --production
+RUN npm install 
 CMD ["node", "index.js"]
 EXPOSE 3000
