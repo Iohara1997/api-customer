@@ -18,7 +18,7 @@ export default db.define("customer", {
     unique: true,
   },
   cpf: {
-    type: Sequelize.BIGINT,
+    type: Sequelize.STRING,
     allowNull: false,
     unique: true,
   },
@@ -31,7 +31,7 @@ export default db.define("customer", {
     allowNull: false,
   },
   cep: {
-    type: Sequelize.BIGINT,
+    type: Sequelize.STRING,
     allowNull: false,
   },
 });
